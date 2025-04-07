@@ -1,0 +1,63 @@
+.serviceList {
+  .serviceListConatiner {
+    max-width: 1186px;
+    margin: auto;
+    text-align: center;
+
+    h1{
+        position: sticky;
+        top: 0;
+        font-size: 40px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: var(--seconadry);
+        padding: 10px 0;
+        text-transform: uppercase;
+    }
+
+    .serviceListItem {
+      min-height: 100vh;
+      scroll-snap-align: center;
+      padding: 20px 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 50px;
+
+
+      .imgConatiner {
+        flex: 1;
+        height: 70vh;
+        background-color:yellow
+      }
+      .textConatiner {
+        flex: 1.5;
+        height: 70vh;
+
+        display: flex;
+        text-align: left;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px 5px;
+
+        h1{
+            font-size: 45px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--letter-color2);
+        }
+
+        p{
+            font-size: 15px;
+            font-weight: 300;
+        }
+      }
+    }
+
+    .serviceListItem:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+  }
+}

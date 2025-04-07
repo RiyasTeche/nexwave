@@ -3,7 +3,7 @@
   width: 100%;
   height: 80px;
   scroll-snap-align: center;
-  background-color:var(--seconadry);
+  background-color: var(--seconadry);
 
   .navbarConatiner {
     height: 100%;
@@ -26,6 +26,12 @@
       cursor: pointer;
       padding: 5px 10px;
 
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
       img {
         width: 100%;
         height: 100%;
@@ -41,9 +47,8 @@
     }
 
     .menuItem {
-      background-color: var(--primary);
       padding: 6px 12px;
-      border-radius: 25px;
+      border-radius: 6px;
       width: max-content;
       text-align: center;
       cursor: pointer;
@@ -52,16 +57,16 @@
       font-weight: 300;
     }
 
-    .active{
-      background-color: var(--letter-color1);
-      color: var(--primary);
+    .active {
+      background-color: var(--primary);
+      color: var(--letter-color1);
       cursor: default;
     }
 
     .menuItem:not(.active):hover {
-      background-color: var(--letter-color1);
-      opacity: .9;
-      color: var(--primary);
+      background-color: var(--primary);
+      opacity: 0.9;
+      color: var(--letter-color1);
       transition: all 1s ease-in-out;
     }
   }
@@ -71,5 +76,4 @@
       max-width: 890px;
     }
   }
-  
 }

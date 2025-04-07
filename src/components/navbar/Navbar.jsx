@@ -16,7 +16,9 @@ const Navbar = () => {
     <div className="navBar">
       <div className="navbarConatiner">
         <div className="logo">
-          <img src="./logo.png" alt="" />
+          <Link to="/">
+           <img src="./logo.png" alt="" />
+          </Link>
         </div>
         <div className="linkConatiner">
           {menu.map((menu) => (

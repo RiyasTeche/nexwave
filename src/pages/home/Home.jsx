@@ -1,4 +1,5 @@
 import HomeDesc from "../../components/home_comp/HomeDesc";
+import HomeFinal from "../../components/home_comp/homeFinal";
 import "./home.scss";
 
 const services = [
@@ -64,7 +65,9 @@ const Home = () => {
         <section>
           <HomeDesc />
         </section>
-        <section>Home 3</section>
+        <section>
+          <HomeFinal />
+        </section>
       </div>
     </div>
   );

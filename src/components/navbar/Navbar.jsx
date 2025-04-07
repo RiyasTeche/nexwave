@@ -6,7 +6,7 @@ const menu = [
   { url: "/services", title: "Services" },
   { url: "/gallery", title: "Gallery" },
   { url: "/contact", title: "Contact" },
-  { url: "/About", title: "About Us" },
+  { url: "/about", title: "About Us" },
 ];
 
 

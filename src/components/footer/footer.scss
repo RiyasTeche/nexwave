@@ -1,3 +1,93 @@
 .footer {
   scroll-snap-align: center;
+  width: 100vw;
+  height: 200px;
+  background-color: rgb(37, 37, 37);
+  color: lightgray;
+
+  .footerConatiner {
+    height: 100%;
+    margin: auto;
+    max-width: 1186px;
+    padding: 10px 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .top {
+      display: flex;
+      align-items: self-start;
+      justify-content: space-between;
+      flex: 5;
+      border-bottom: 1px solid lightgray;
+
+      h4 {
+        color: var(--primary);
+        font-weight: 500;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        p,
+        a {
+          font-size: 12px;
+          font-weight: 300;
+          color: gray;
+        }
+      }
+      .left {
+        flex: 1;
+      }
+      .center {
+        flex: 1;
+      }
+      .right {
+        flex: 1.5;
+
+        .newsbottom {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          background-color: white;
+
+          input {
+            border: none;
+            outline: none;
+            padding: 3px 5px;
+          }
+
+          button {
+            padding: 10px 10px;
+            border: none;
+            background-color: var(--primary);
+            color: gray;
+          }
+        }
+      }
+    }
+    .bottom {
+      flex: 1;
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      justify-content: space-between;
+
+      p{
+        font-size: 8px;
+        font-weight: 300;
+        color: gray;
+      }
+
+      .footerInfoRigth{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+      }
+    }
+  }
 }

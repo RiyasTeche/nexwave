@@ -2,6 +2,9 @@ import HomeDesc from "../../components/home_comp/HomeDesc";
 import HomeFinal from "../../components/home_comp/homeFinal";
 import "./home.scss";
 
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 const services = [
   { img: "ship.png", title: "Ocean Frieght Services", desc: "Innovative" },
   { img: "airplane.png", title: "Air Frieght Services", desc: "Reliable" },
@@ -28,12 +31,44 @@ const ServiceLink = ({ service }) => {
 };
 
 const Home = () => {
+  const textVariants = {
+    initial: { x: -100, opacity: 0 },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.5,
+        staggerChilden: 0.2,
+      },
+    },
+  };
+  const serviceVariants = {
+    initial: { y: 200, opacity: 0 },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.5,
+        staggerChilden: 0.2,
+      },
+    },
+  };
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.5, once: true }); // 50% visible, only trigger once
+  const isServiceInView = useInView(ref, { amount: 0.5, once: false }); // 50% visible, only trigger once
+
   return (
     <div className="home">
       <div className="homeWrapper">
         <div className="heroConatiner">
           <div className="top">
-            <div className="left">
+            <motion.div
+              ref={ref}
+              className="left"
+              variants={textVariants}
+              animate={isInView ? "animate" : "initial"}
+            >
               <p>Moving Cargo, Building Trust</p>
               <h1>
                 Logistics Simplified.
@@ -52,15 +87,19 @@ const Home = () => {
                 <span>NEXWAVE</span> keeps your supply chain moving—no matter
                 where your business takes you.
               </p>
-            </div>
+            </motion.div>
             <div className="right"></div>
           </div>
           <div className="bottom"></div>
-          <div className="serviceLinks">
+          <motion.div
+            className="serviceLinks"
+            variants={serviceVariants}
+            animate={isServiceInView ? "animate" : "initial"}
+          >
             {services.map((service) => (
               <ServiceLink service={service} key={service.title} />
             ))}
-          </div>
+          </motion.div>
         </div>
         <section>
           <HomeDesc />

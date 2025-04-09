@@ -21,8 +21,8 @@
         padding: 20px 20px;
 
         img {
-          width: 100px;
-          height: 100px;
+          width: 120px;
+          height: 128px;
         }
 
         h1 {
@@ -43,13 +43,13 @@
       flex-direction: column;
       gap: 15px;
       align-items: center;
-      color: var(--letter-color2);
+      color: var(--primary);
       text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.25);
 
       .top {
         width: 1186px;
         text-align: start;
-        background-color: var(--primary);
+        background-color: #1f1b1b;
         padding: 5px 25px;
         transform: translateY(-30px);
         h2 {

@@ -97,7 +97,7 @@ const ServicePageItem = (props) => {
               src="./scroll.png"
               alt=""
               initial={{ y: "-10px", opacity: 0 }}
-              animate={{ y: "0px", opacity: 1 }}
+              animate={{ y: "0px", opacity: .5 }}
               transition={{
                 duration: 2,
                 repeat: Infinity,

@@ -1,5 +1,4 @@
 import "./services.scss";
-import HomeFinal from "../../components/home_comp/homeFinal";
 import ServiceList from "../../components/serviceList/ServiceList";
 
 import { motion } from "framer-motion";

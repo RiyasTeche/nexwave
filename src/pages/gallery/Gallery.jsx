@@ -14,7 +14,7 @@ function getHeight () {
   return `${map[random]}!`;
 };
 
-const galleryList = Array.from({ length: 16 }, (_, i) => ({
+const galleryList = Array.from({ length: 20 }, (_, i) => ({
   height: getHeight(),
   img: (i+1) + ".jpg",
 }));

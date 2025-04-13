@@ -5,10 +5,21 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footerConatiner">
+        <div className="firstConatiner">
+          <h1> Subscribe US </h1>
+        </div>
         <div className="top">
           <div className="left">
             <h4>Get in Touch</h4>
             <div className="address">
+              <p>
+                London,City,Country
+                <br />
+                +123456789
+                <br />
+                info@example.com
+              </p>
+              <hr />
               <p>
                 London,City,Country
                 <br />
@@ -36,7 +47,11 @@ const Footer = () => {
                 </p>
               </div>
               <div className="newsbottom">
-                <input type="text" placeholder="Your Email Address" name="footerMail" />
+                <input
+                  type="text"
+                  placeholder="Your Email Address"
+                  name="footerMail"
+                />
                 <button>Sign Up</button>
               </div>
             </div>

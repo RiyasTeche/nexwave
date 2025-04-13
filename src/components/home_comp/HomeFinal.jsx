@@ -7,7 +7,7 @@ const HomeFinal = () => {
   const isInView = useInView(textRef, { amount: 0.5, once: false }); // 50% visible, only trigger once
 
   const variants = {
-    initial: { x: -300, opacity: 0 },
+    initial: { x: -100, opacity: 0 },
     animate: {
       x: 0,
       opacity: 1,

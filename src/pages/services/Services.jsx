@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const Services = () => {
 
   const variants = {
-    initial: { y: -600, opacity: 0 },
+    initial: { y: -300, opacity: 0 },
     animate: {
       y: -25,
       opacity: 1,

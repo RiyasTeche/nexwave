@@ -6,6 +6,7 @@
       min-height: calc(100vh - 80px);
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
 
       background-image: url("../public/cover4.jpg");
       background-size: 100%;
@@ -13,7 +14,7 @@
       background-position: center;
 
       .top {
-        max-width: 1186px;
+        min-width: 1186px;
         margin: auto;
         flex: 5;
         display: flex;
@@ -21,11 +22,12 @@
         justify-content: center;
         flex-direction: column;
         gap: 5px;
-        color: var(--letter-color1);
-        position: relative;
+        color: var(--letter-color2);
+        
 
         .left {
-          width: 60%;
+          width: 100%;
+         
           h1 {
             font-size: 50px;
             font-weight: bold;
@@ -35,29 +37,33 @@
           p {
             font-size: 13px;
             font-weight: 300;
-            color: lightgray;
+             color: lightgray;
+            letter-spacing: 1.5px;
+            line-height: 2fr;
           }
 
-          p:nth-of-type(2) {
-            background-color: #00000063;
-            padding: 10px 10px;
-            border-radius: 6px;
-            letter-spacing: 1px;
-          }
+          // p:nth-of-type(2) {
+          //   background-color: rgba(0, 0, 0, 0.445);
+          //   padding: 10px 10px;
+          //   border-radius: 6px;
+          //   letter-spacing: 1px;
+          // }
 
-          span {
-            font-size: 20px;
-            font-weight: 600;
-            text-shadow: -1px -1px 0 var(--primary), 1px -1px 0 var(--primary), -1px 1px 0 var(--primary),
-            1px 1px 0 var(--primary);
-          }
+          // span {
+          //   font-size: 20px;
+          //   font-weight: 600;
+          //   text-shadow: -1px -1px 0 var(--primary), 1px -1px 0 var(--primary), -1px 1px 0 var(--primary),
+          //   1px 1px 0 var(--primary);
+          // }
         }
-        .right {
-          width: 40%;
-        }
+        // .right {
+        //   width: 20%;
+        //   background-color: aqua;
+        // }
       }
       .bottom {
         flex: 5;
+        position: relative;
         background-color: var(--primary);
         width: 100vw;
       }
@@ -70,7 +76,7 @@
         left: 0;
         right: 0;
         margin: auto;
-        bottom: 6%;
+        bottom: 20%;
         border-radius: 8px;
 
         display: flex;
@@ -123,6 +129,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      background-image: url("../public/background.jpg");
     }
 
     section:nth-of-type(2) {

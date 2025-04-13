@@ -1,6 +1,27 @@
+import { useRef, useState } from "react";
 import "./reach.scss";
+import { motion, useInView } from "framer-motion";
 
 const Reach = () => {
+
+  const [counter, setCounter] = useState(
+    { packages: 1 },
+    { client: 1 },
+    { countries: 1 },
+    { goods: 1 }
+  );
+
+  const variants = {
+    initial: { y: 250, opacity: 0 },
+    animate: {
+      x: 0,
+      opacity: 1,
+    },
+  };
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.8, once: false }); // 50% visible, only trigger once
+
   return (
     <div className="reach">
       <div className="reachContainer">
@@ -21,48 +42,91 @@ const Reach = () => {
           commodi maxime molestias.
         </p>
 
-        <div className="reachItems">
-          <div className="reachItem">
+        <div className="reachItems" ref={ref}>
+          <motion.div className="reachItem" variants={variants} animate={isInView ? "animate" : "initial"}  transition={{ duration: .5, ease: "easeInOut" }}>
             <div className="imgContainer">
               <img src="./package.png" alt="" />
             </div>
             <div className="number">
-              <span>3800</span>
+              <motion.span
+                animate={isInView ? { count: 5135 } : { count: 1 }}
+                transition={{ duration: 2, ease: "easeInOut" }}
+                onUpdate={(latest) => {
+                  setCounter((prevItems) => ({
+                    ...prevItems,
+                    packages: Math.floor(latest.count),
+                  }));
+                }}
+              >
+                {counter.packages}
+              </motion.span>
               <span>M</span>
             </div>
             <h4>Deliverd Packages</h4>
-          </div>
-          <div className="reachItem">
+          </motion.div>
+          <motion.div className="reachItem" variants={variants} animate={isInView ? "animate" : "initial"} transition={{ duration: 1, ease: "easeInOut" }}>
             <div className="imgContainer">
               <img src="./boy.png" alt="" />
             </div>
             <div className="number">
-              <span>7456</span>
+              <motion.span
+                animate={isInView ? { count: 7456 } : { count: 1 }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+                onUpdate={(latest) => {
+                  setCounter((prevItems) => ({
+                    ...prevItems,
+                    client: Math.floor(latest.count),
+                  }));
+                }}
+              >
+                {counter.client}
+              </motion.span>
               <span></span>
             </div>
             <h4>Satisfied Client</h4>
-          </div>
-          <div className="reachItem">
+            </motion.div>
+          <motion.div className="reachItem" variants={variants} animate={isInView ? "animate" : "initial"} transition={{ duration: 1.5, ease: "easeInOut" }}>
             <div className="imgContainer">
               <img src="./flags.png" alt="" />
             </div>
             <div className="number">
-              <span>52</span>
+              <motion.span
+                animate={isInView ? { count: 52 } : { count: 1 }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+                onUpdate={(latest) => {
+                  setCounter((prevItems) => ({
+                    ...prevItems,
+                    countries: Math.floor(latest.count),
+                  }));
+                }}
+              >
+                {counter.countries}
+              </motion.span>
               <span>+</span>
             </div>
             <h4>Countries Covered</h4>
-          </div>
-          <div className="reachItem">
+            </motion.div>
+          <motion.div className="reachItem" variants={variants} animate={isInView ? "animate" : "initial"} transition={{ duration: 2, ease: "easeInOut" }}>
             <div className="imgContainer">
-              <img src="./parcel.png" alt="" />
+              <img src="./goods.png" alt="" />
             </div>
             <div className="number">
-              <span>4582</span>
+              <motion.span
+                animate={isInView ? { count: 4582 } : { count: 1 }}
+                transition={{ duration: 1.8, ease: "easeInOut" }}
+                onUpdate={(latest) => {
+                  setCounter((prevItems) => ({
+                    ...prevItems,
+                    goods: Math.floor(latest.count),
+                  }));
+                }}
+              >
+                {counter.goods}
+              </motion.span>
               <span>M</span>
             </div>
             <h4>Tons of Goods</h4>
-          </div>
-          
+          </motion.div>
         </div>
       </div>
     </div>

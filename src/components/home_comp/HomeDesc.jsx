@@ -3,13 +3,13 @@ import "./homedesc.scss";
 import { motion, useInView } from "framer-motion";
 
 const HomeDesc = () => {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(1);
 
   const textRef = useRef(null);
   const isInView = useInView(textRef, { amount: 0.8, once: false }); // 50% visible, only trigger once
 
   const variants = {
-    initial: { x: 800, opacity: 0 },
+    initial: { x: 250, opacity: 0 },
     animate: {
       x: 0,
       opacity: 1,
@@ -32,7 +32,7 @@ const HomeDesc = () => {
           <div className="counterBottom">
             <div className="counterWrapper">
               <motion.h3
-                animate={isInView ? { count: 7582 } : { count: 0 }}
+                animate={isInView ? { count: 7582 } : { count: 1 }}
                 transition={{ duration: 2, ease: "easeOut" }}
                 onUpdate={(latest) => {
                   setCurrent(Math.floor(latest.count));

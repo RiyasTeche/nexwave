@@ -1,14 +1,34 @@
 import "./about.scss";
 import ContainerModelConatiner from "../../components/conatiner/ContainerModelConatiner";
 import Reach from "../../components/about_comp/Reach";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const About = () => {
+  const textRef = useRef(null);
+  const isInView = useInView(textRef, { amount: 0.8, once: false }); // 50% visible, only trigger once
+
+  const variants = {
+    initial: { x: -100, opacity: 0 },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.5,
+      },
+    },
+  };
+
   return (
     <div className="about">
       <div className="aboutWrapper">
-        <div className="aboutConatiner">
-          <div className="left">
-            <h1>Our History.</h1>
+        <div className="aboutConatiner" ref={textRef}>
+          <motion.div
+            className="left"
+            variants={variants}
+            animate={isInView ? "animate" : "initial"}
+          >
+            <h1>Our History</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
               odit modi hic inventore assumenda esse consectetur facilis, ipsum
@@ -22,9 +42,9 @@ const About = () => {
               ullam repellendus neque!
             </p>
             <button>View More !</button>
-          </div>
+          </motion.div>
           <div className="right">
-            <ContainerModelConatiner />
+            {/* <ContainerModelConatiner /> */}
           </div>
         </div>
       </div>

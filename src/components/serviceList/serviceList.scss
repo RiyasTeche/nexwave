@@ -1,4 +1,9 @@
 .serviceList {
+  background-image: url("../public/background.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-attachment: fixed;
+
   .serviceListConatiner {
     max-width: 1186px;
     margin: auto;
@@ -32,6 +37,7 @@
         right: 0;
         height: 10px;
         background-color: var(--primary);
+        z-index: 1;
       }
 
       .imgConatiner {

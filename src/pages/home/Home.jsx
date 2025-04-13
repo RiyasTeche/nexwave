@@ -2,6 +2,7 @@ import HomeDesc from "../../components/home_comp/HomeDesc";
 import HomeFinal from "../../components/home_comp/homeFinal";
 import "./home.scss";
 
+import { TypeAnimation } from "react-type-animation";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -69,13 +70,30 @@ const Home = () => {
               variants={textVariants}
               animate={isInView ? "animate" : "initial"}
             >
-              <p>Moving Cargo, Building Trust</p>
+              <p>
+              <TypeAnimation
+          sequence={[
+            1000,
+            // Same substring at the start will only be typed out once, initially
+            "Moving Cargo, Building Trust",
+            1000, // wait 1s before replacing "Mice" with "Hamsters"
+            "Speed. Precision. Delivered.",
+            1000,
+            "Connecting the World, One Delivery at a Time.",
+            1000
+          ]}
+          wrapper="span"
+          speed={40}
+          deletionSpeed={60}
+          repeat={Infinity}
+        />
+              </p>
               <h1>
                 Logistics Simplified.
                 <br />
                 Delivery Amplified.
               </h1>
-              <p>
+              {/* <p>
                 At <span>NEXWAVE</span>, we specialize in comprehensive shipping
                 and logistics solutions via air and sea, delivering excellence
                 across every mile. With a robust global network and strategic
@@ -86,9 +104,9 @@ const Home = () => {
                 &#9;With a commitment to speed, security, and service,
                 <span>NEXWAVE</span> keeps your supply chain moving—no matter
                 where your business takes you.
-              </p>
+              </p> */}
             </motion.div>
-            <div className="right"></div>
+            {/* <div className="right"></div> */}
           </div>
           <div className="bottom"></div>
           <motion.div

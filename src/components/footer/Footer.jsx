@@ -15,8 +15,8 @@ const Footer = () => {
             <h4>Get in Touch</h4>
             <div className="address">
               {company.map((add, i) => (
-                <>
-                  <p key={i}>
+                <div key={i}>
+                  <p>
                     {add.name}
                     <br />
                     {add.address},{add.city},{add.country}
@@ -26,7 +26,7 @@ const Footer = () => {
                     {add.mail}
                   </p>
                   {company.length != i + 1 && <hr />}
-                </>
+                </div>
               ))}
             </div>
           </div>

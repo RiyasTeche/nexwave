@@ -1,0 +1,71 @@
+.officeSpaces {
+  .officeConatiner {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    .top {
+      flex: 1;
+
+      h1 {
+        text-align: center;
+        line-height: 100px; /* same as height */
+        font-size: 50px;
+        font-weight: 400;
+      }
+    }
+    .bottom {
+      flex: 6;
+      display: flex;
+      gap: 10px;
+      padding: 20px 20px;
+
+      .left {
+        flex: 1;
+        padding: 10px 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 80%;
+          height: 80%;
+        }
+      }
+      .center {
+        flex: 0.5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+
+        .countryName {
+          padding: 10px 10px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          h3 {
+            text-transform: uppercase;
+            font-size: 30px;
+            font-weight: 400;
+            color: gray;
+            cursor: pointer;
+          }
+
+          h3.active {
+            color: var(--letter-color2);
+            cursor: default;
+          }
+        }
+      }
+      .right {
+        flex: 1;
+        background-color: blue;
+      }
+    }
+  }
+}

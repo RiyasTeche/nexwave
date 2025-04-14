@@ -1,4 +1,4 @@
-import ContactMe from "../../components/contact_comp/ContactMe";
+import OfficeSpaces from "../../components/contact_comp/OfficeSpaces";
 import "./contact.scss";
 
 const Contact = () => {
@@ -16,15 +16,15 @@ const Contact = () => {
           <form>
             <div className="fromItem">
               <label htmlFor="name">Name</label>
-              <input type="text" name="name" placeholder="Enter your name"  autofocus/>
+              <input type="text" name="name" placeholder="Enter your name"  autoFocus required/>
             </div>
             <div className="fromItem">
               <label htmlFor="email">Email</label>
-              <input type="email" name="email" placeholder="info@nexwave.com" />
+              <input type="email" name="email" placeholder="info@nexwave.com" required/>
             </div>
             <div className="fromItem">
               <label htmlFor="phone">Phone</label>
-              <input type="number" name="phone" placeholder="+12 231456789" />
+              <input type="number" name="phone" placeholder="+00 1234567890" required/>
             </div>
             <div className="fromItem">
               <textarea
@@ -38,7 +38,7 @@ const Contact = () => {
         </div>
       </div>
       <section>
-        <ContactMe />
+        <OfficeSpaces />
       </section>
     </div>
   );

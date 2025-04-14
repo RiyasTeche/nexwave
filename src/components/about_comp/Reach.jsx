@@ -12,7 +12,7 @@ const Reach = () => {
   );
 
   const variants = {
-    initial: { y: 250, opacity: 0 },
+    initial: { y: 200, opacity: 0 },
     animate: {
       x: 0,
       opacity: 1,

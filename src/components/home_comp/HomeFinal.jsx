@@ -4,7 +4,7 @@ import { motion,useInView } from "framer-motion";
 
 const HomeFinal = () => {
   const textRef = useRef(null);
-  const isInView = useInView(textRef, { amount: 0.5, once: false }); // 50% visible, only trigger once
+  const isInView = useInView(textRef, { amount: 0.4, once: false }); // 50% visible, only trigger once
 
   const variants = {
     initial: { x: -100, opacity: 0 },

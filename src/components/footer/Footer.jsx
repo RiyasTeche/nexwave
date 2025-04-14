@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "./footer.scss";
 
+import { company } from "../../../public/data";
+
 const Footer = () => {
   return (
     <div className="footer">
@@ -12,25 +14,25 @@ const Footer = () => {
           <div className="left">
             <h4>Get in Touch</h4>
             <div className="address">
-              <p>
-                London,City,Country
-                <br />
-                +123456789
-                <br />
-                info@example.com
-              </p>
-              <hr />
-              <p>
-                London,City,Country
-                <br />
-                +123456789
-                <br />
-                info@example.com
-              </p>
+              {company.map((add, i) => (
+                <>
+                  <p key={i}>
+                    {add.name}
+                    <br />
+                    {add.address},{add.city},{add.country}
+                    <br />
+                    {add.phone}
+                    <br />
+                    {add.mail}
+                  </p>
+                  {company.length != i + 1 && <hr />}
+                </>
+              ))}
             </div>
           </div>
           <div className="center">
             <h4>Quick Links</h4>
+            <Link to="/">Home</Link>
             <Link to="/services">Services</Link>
             <Link to="/gallery">Gallery</Link>
             <Link to="/contact">Contact</Link>

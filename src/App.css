@@ -41,7 +41,7 @@ a {
 section {
   min-height: 100vh;
   scroll-snap-align: center;
-  background-repeat: no-repeat,;
+  background-repeat: no-repeat;
   background-size: 100%;
   background-attachment: fixed;
   background-position: center;

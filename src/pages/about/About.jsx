@@ -3,6 +3,7 @@ import ContainerModelConatiner from "../../components/conatiner/ContainerModelCo
 import Reach from "../../components/about_comp/Reach";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Office from "../../components/about_comp/Office";
 
 const About = () => {
   const textRef = useRef(null);
@@ -50,6 +51,9 @@ const About = () => {
       </div>
       <section>
         <Reach />
+      </section>
+      <section>
+        <Office />
       </section>
     </div>
   );

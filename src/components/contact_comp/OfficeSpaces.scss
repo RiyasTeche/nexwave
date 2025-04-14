@@ -12,6 +12,7 @@
         line-height: 100px; /* same as height */
         font-size: 50px;
         font-weight: 400;
+        text-transform: uppercase;
       }
     }
     .bottom {
@@ -51,20 +52,63 @@
           h3 {
             text-transform: uppercase;
             font-size: 30px;
-            font-weight: 400;
             color: gray;
             cursor: pointer;
+            font-weight: 400;
           }
 
           h3.active {
             color: var(--letter-color2);
             cursor: default;
+            font-weight: 500;
           }
         }
       }
       .right {
         flex: 1;
-        background-color: blue;
+
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .officeInfo {
+          flex: 1;
+
+          h3 {
+            font-size: 18px;
+            font-weight: 300;
+            text-transform: uppercase;
+            border-bottom: 1px gray solid;
+          }
+
+          .officeInfoItem {
+            padding: 10px 10px;
+            display: flex;
+            gap: 10px;
+
+            ul {
+              margin-left: 10px;
+
+              li {
+                padding: 0 10px;
+
+                p {
+                  font-size: 15px;
+                  font-weight: 300;
+                }
+              }
+            }
+
+            .infoleft {
+              flex: 1;
+              padding: 10px 10px;
+            }
+            .infoRight {
+              flex: 1;
+              padding: 10px 10px;
+            }
+          }
+        }
       }
     }
   }

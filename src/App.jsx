@@ -8,11 +8,13 @@ const Services = lazy(() => import("./pages/services/Services"));
 const Gallery = lazy(() => import("./pages/gallery/Gallery"));
 const About = lazy(() => import("./pages/about/About"));
 const Contact = lazy(() => import("./pages/contact/Contact"));
+const NotFound = lazy(() => import("./pages/notFound/NotFound"));
 
 function App() {
   return (
     <div>
       <Router basename="/nexwave/">
+      {/* <Router> */}
         <Suspense
           fallback={
             <div className="loader">
@@ -29,6 +31,7 @@ function App() {
               <Route path="gallery" element={<Gallery />} />
               <Route path="about" element={<About />} />
               <Route path="contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
         </Suspense>

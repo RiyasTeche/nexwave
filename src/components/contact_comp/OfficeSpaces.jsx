@@ -1,105 +1,20 @@
 import { useState } from "react";
 import "./officeSpaces.scss";
-
-const officeList = [
-  {
-    COUNTRY: "UGANDA",
-    IMG: "uganda.png",
-    OFFICES: [
-      {
-        NAME: "nexwave shipping",
-        ADDRESS: "kampala",
-        CITY: "kampala",
-        PO: "671523",
-        COUNTRY: "Uganda",
-        OFFICEPHONE: "+9521833486",
-        FIRSTPERSON: "fasal",
-        ROLL: "Managing Director",
-        PHONE: "+128345853",
-        SECONDPERSON: "Muhammed",
-        SECPHONE: "+128345853",
-        MAIL: "info@nexwave.com",
-      },
-      {
-        NAME: "nexwave shipping",
-        ADDRESS: "kampala",
-        CITY: "jinja",
-        PO: "671523",
-        COUNTRY: "Uganda",
-        OFFICEPHONE: "+9521833486",
-        FIRSTPERSON: "fasal",
-        ROLL: "Managing Director",
-        PHONE: "+128345853",
-        SECONDPERSON: "Muhammed",
-        SECPHONE: "+128345853",
-        MAIL: "info@nexwave.com",
-      },
-    ],
-  },
-  {
-    COUNTRY: "RWANDA",
-    IMG: "rwanda.png",
-    OFFICES: [
-      {
-        NAME: "nexwave shipping",
-        ADDRESS: "kigali",
-        CITY: "kigali",
-        PO: "671523",
-        COUNTRY: "Rwanda",
-        OFFICEPHONE: "+952134563486",
-        MAIL: "info@nexwave.com",
-        FIRSTPERSON: "fasal",
-        ROLL: "Director",
-        PHONE: "+123235853",
-        SECONDPERSON: "Arun",
-        SECPHONE: "+1283455643",
-      },
-    ],
-  },
-  {
-    COUNTRY: "UAE",
-    IMG: "uae.jpg",
-    OFFICES: [
-      {
-        name: "nexwave LLC",
-        ADDRESS: "dubai",
-        CITY: "dubai",
-        PO: "671523",
-        COUNTRY: "UAE",
-        OFFICEPHONE: "+952134486",
-        FIRSTPERSON: "Salman",
-        ROLL: "Manager",
-        PHONE: "+123235853",
-        SECONDPERSON: "asif",
-        SECPHONE: "+12455643",
-        MAIL: "info@nexwave.com",
-      },
-      {
-        name: "nexwave LLC",
-        ADDRESS: "dubai",
-        CITY: "abu dabi",
-        PO: "671523",
-        COUNTRY: "UAE",
-        OFFICEPHONE: "+952134486",
-        FIRSTPERSON: "Salman",
-        ROLL: "Manager",
-        PHONE: "+123235853",
-        SECONDPERSON: "asif",
-        SECPHONE: "+12455643",
-        MAIL: "info@nexwave.com",
-      },
-    ],
-  },
-];
+import { officeList } from "../../../public/data";
+import { motion } from "framer-motion";
 
 const OfficeInfo = ({ index }) => {
-
   const offices = officeList[index].OFFICES;
-  console.log(offices);
   return (
     <>
       {offices.map((item, i) => (
-        <div className="officeInfo" key={i}>
+        <motion.div
+          className="officeInfo"
+          key={i}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
           <h3>{item.CITY} OFFICE</h3>
           <div className="officeInfoItem">
             <div className="infoleft">
@@ -132,14 +47,22 @@ const OfficeInfo = ({ index }) => {
               </ul>
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </>
   );
 };
 
 const OfficeSpaces = () => {
-  const [selectedIndex, setselectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const variants = {
+    initial: { opacity: 0, scale: 0 },
+    animate: {
+      opacity: 1,
+      scale: 1,
+    },
+  };
 
   return (
     <div className="officeSpaces">
@@ -149,14 +72,22 @@ const OfficeSpaces = () => {
         </div>
         <div className="bottom">
           <div className="left">
-            <img src={"./" + officeList[selectedIndex].IMG} alt="" />
+            <motion.img
+              src={"./" + officeList[selectedIndex].IMG}
+              alt=""
+              variants={variants}
+              key={selectedIndex}
+              initial="initial"
+              animate="animate"
+              transition={{ duration: 1, ease: "easeInOut" }}
+            />
           </div>
           <div className="center">
             {officeList.map((item, i) => (
               <div className="countryName" key={i}>
                 <h3
                   className={selectedIndex === i ? "active" : ""}
-                  onClick={() => setselectedIndex(i)}
+                  onClick={() => setSelectedIndex(i)}
                 >
                   {item.COUNTRY}
                 </h3>

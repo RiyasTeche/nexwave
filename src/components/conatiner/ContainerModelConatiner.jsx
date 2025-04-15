@@ -11,7 +11,7 @@ const ContainerModelConatiner = () => {
           <Stage environment={"city"} intensity={0.5}>
             <ContainerModel />
           </Stage>
-          <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={.2}/>
+          <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={.5}/>
           <PerspectiveCamera position={[4, .8, 1.8]} zoom={1.2} makeDefault />
         </mesh>
       </Suspense>

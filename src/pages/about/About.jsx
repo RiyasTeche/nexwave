@@ -1,5 +1,4 @@
 import "./about.scss";
-import ContainerModelConatiner from "../../components/conatiner/ContainerModelConatiner";
 import Reach from "../../components/about_comp/Reach";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -45,7 +44,6 @@ const About = () => {
             <button>View More !</button>
           </motion.div>
           <div className="right">
-            {/* <ContainerModelConatiner /> */}
           </div>
         </div>
       </div>

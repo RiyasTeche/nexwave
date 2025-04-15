@@ -93,18 +93,6 @@ const Home = () => {
                 <br />
                 Delivery Amplified.
               </h1>
-              {/* <p>
-                At <span>NEXWAVE</span>, we specialize in comprehensive shipping
-                and logistics solutions via air and sea, delivering excellence
-                across every mile. With a robust global network and strategic
-                operations spanning the Middle East, India, Africa, China, and
-                beyond, we are your trusted partner in international cargo
-                movement.
-                <br />
-                &#9;With a commitment to speed, security, and service,
-                <span>NEXWAVE</span> keeps your supply chain moving—no matter
-                where your business takes you.
-              </p> */}
             </motion.div>
             {/* <div className="right"></div> */}
           </div>

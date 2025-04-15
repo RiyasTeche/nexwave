@@ -4,6 +4,7 @@
   height: 80px;
   scroll-snap-align: center;
   background-color: var(--seconadry);
+  position: relative;
 
   .navbarConatiner {
     height: 100%;
@@ -46,6 +47,49 @@
       gap: 15px;
     }
 
+    .sidebarMenu {
+      display: none;
+
+      .toggleButton {
+        width: 22px;
+        height: 18px;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+        justify-content: space-between;
+        z-index: 5;
+
+        .lines {
+          width: 22px;
+          height: 3px;
+          background-color: var(--letter-color2);
+          border-radius: 20px;
+        }
+
+        .lines:nth-child(2n + 1) {
+          transform-origin: left;
+        }
+      }
+
+      .sidebarLinks {
+        width: 50vw;
+        min-height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-left: 1px var(--primary) solid;
+        background-color: var(--letter-color2);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+
     .menuItem {
       padding: 6px 12px;
       border-radius: 6px;
@@ -74,6 +118,43 @@
   @media (max-width: 1115px) {
     .navbarConatiner {
       max-width: 890px;
+    }
+  }
+
+  @media (max-width: 938px) {
+    .navbarConatiner {
+      max-width: 830px;
+    }
+  }
+
+  @media (max-width: 715px) {
+    .navbarConatiner {
+      max-width: 680px;
+    }
+  }
+
+  @media (max-width: 644px) {
+    .navbarConatiner {
+      max-width: 480px;
+
+      .linkConatiner {
+        display: none;
+      }
+
+      .sidebarMenu {
+        display: block;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .navbarConatiner {
+      max-width: 300px;
+    }
+  }
+  @media (max-width: 332px) {
+    .navbarConatiner {
+      max-width: 250px;
     }
   }
 }

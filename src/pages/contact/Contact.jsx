@@ -1,3 +1,4 @@
+import ContainerModelConatiner from "../../components/conatiner/ContainerModelConatiner";
 import OfficeSpaces from "../../components/contact_comp/OfficeSpaces";
 import "./contact.scss";
 
@@ -16,15 +17,33 @@ const Contact = () => {
           <form>
             <div className="fromItem">
               <label htmlFor="name">Name</label>
-              <input type="text" name="name" placeholder="Enter your name"  autoFocus required/>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter your name"
+                autoFocus
+                required
+              />
             </div>
             <div className="fromItem">
               <label htmlFor="email">Email</label>
-              <input type="email" name="email" placeholder="info@nexwave.com" required/>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="info@nexwave.com"
+                required
+              />
             </div>
             <div className="fromItem">
               <label htmlFor="phone">Phone</label>
-              <input type="number" name="phone" placeholder="+00 1234567890" required/>
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                placeholder="+00 1234567890"
+              />
             </div>
             <div className="fromItem">
               <textarea
@@ -39,6 +58,13 @@ const Contact = () => {
       </div>
       <section>
         <OfficeSpaces />
+      </section>
+      <section>
+        <div className="containerWrapper">
+          <div className="circle"></div>
+          <ContainerModelConatiner />
+          <h1>NEXWAVE</h1>
+        </div>
       </section>
     </div>
   );

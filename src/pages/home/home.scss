@@ -9,6 +9,7 @@
       align-items: flex-start;
 
       background-image: url("../public/cover4.jpg");
+      background-repeat: no-repeat;
       background-size: 100%;
       background-attachment: fixed;
       background-position: center;
@@ -112,6 +113,44 @@
           min-width: 853px;
         }
       }
+      @media (max-width: 875px) {
+        .top {
+          min-width: 700px;
+        }
+        .heroConatiner {
+          .serviceLinks {
+            width: 85vw;
+            height: 120px;
+
+            .serviceItem {
+              gap: 2px;
+              padding: 5px 5px;
+              min-height: 100%;
+
+              .serviceImg {
+                width: 25px;
+                height: 25px;
+
+                img {
+                  width: 80%;
+                  height: 80%;
+                }
+              }
+              .serviceText {
+                p {
+                  font-size: 8px;
+                  font-weight: 300;
+                }
+
+                h5 {
+                  font-size: 8x;
+                  font-weight: 300;
+                }
+              }
+            }
+          }
+        }
+      }
       @media (max-width: 715px) {
         .top {
           min-width: 630px;
@@ -127,31 +166,61 @@
         }
       }
       @media (max-width: 644px) {
+
+        background-image: url("../public/phonecover.jpg");
+        background-size: cover;       /* ✅ Makes the image fill and crop properly */
         .top {
           min-width: 500px;
         }
-        .bottom{
+        .bottom {
           display: none;
         }
+        .serviceLinks {
+          bottom: 30px;
+          width: 95vw;
+          .serviceImg {
+            display: none;
+          }
+        }
       }
+
       @media (max-width: 529px) {
         .top {
           min-width: 430px;
         }
       }
 
-      @media (max-width: 444px) {
+      @media (max-width: 406px) {
+        .top {
+          min-width: 350px;
+        }
+        .serviceLinks {
+          height: max-content;
+          width: 65vw;
+
+          .serviceItem {
+            border-right: none;
+          }
+        }
+      }
+
+      @media (max-width: 360px) {
         .top {
           min-width: 300px;
+          justify-content: start;
+
           .left {
+            margin-top: 50px;
             h1 {
               font-size: 20px;
               font-weight: 300;
             }
             p {
               font-size: 8px;
+              font-weight: 300;
             }
           }
+
         }
       }
     }
@@ -164,76 +233,6 @@
 
     section:nth-of-type(2) {
       background-image: url("../public/cover2.jpg");
-    }
-
-    @media (max-width: 875px) {
-      .top {
-        min-width: 700px;
-      }
-      .heroConatiner {
-        .serviceLinks {
-          width: 85vw;
-          height: 120px;
-
-          .serviceItem {
-            gap: 2px;
-            padding: 5px 5px;
-            min-height: 100%;
-
-            .serviceImg {
-              width: 100%;
-              height: 100%;
-
-              img {
-                width: 60%;
-                height: 60%;
-              }
-            }
-            .serviceText {
-              p {
-                font-size: 8px;
-                font-weight: 300;
-              }
-
-              h5 {
-                font-size: 8x;
-                font-weight: 300;
-              }
-            }
-          }
-        }
-      }
-    }
-    @media (max-width: 615px) {
-      .heroConatiner {
-        .serviceLinks {
-          height: max-content;
-
-          .serviceItem {
-            .serviceImg {
-              display: none;
-            }
-            .serviceText {
-              text-align: center;
-              h5 {
-                font-size: 10x;
-                font-weight: 400;
-              }
-            }
-          }
-        }
-      }
-    }
-    @media (max-width: 291px) {
-      .heroConatiner {
-        .serviceLinks {
-          height: max-content;
-
-          .serviceItem {
-            border-right: none
-          }
-        }
-      }
     }
   }
 }

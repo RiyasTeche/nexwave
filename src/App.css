@@ -3,7 +3,7 @@
 :root {
   --primary: #175892;
   --seconadry: #175992a4;
-  --bg-shade-start: #c4d8f146;
+  --bg-shade-start: #324e70c2;
   --bg-shade-end: #ada7cc94;
   --letter-color1: #fff;
   --letter-color2: #080808ce;
@@ -45,6 +45,7 @@ section {
   background-size: 100%;
   background-attachment: fixed;
   background-position: center;
+  background-size: cover;       /* ✅ Makes the image fill and crop properly */
 }
 
 .loader {

@@ -12,7 +12,7 @@ const Contact = lazy(() => import("./pages/contact/Contact"));
 function App() {
   return (
     <div>
-      <Router>
+      <Router basename="/nexwave/">
         <Suspense
           fallback={
             <div className="loader">
@@ -23,6 +23,8 @@ function App() {
           <Routes>
             <Route path="/" element={<MainLayout />}>
               <Route index element={<Home />} />
+              {/* ADDED FOR GIT HUB DEPOLOYMENT */}
+              <Route path="/nexwave" element={<Home />} />
               <Route path="services" element={<Services />} />
               <Route path="gallery" element={<Gallery />} />
               <Route path="about" element={<About />} />

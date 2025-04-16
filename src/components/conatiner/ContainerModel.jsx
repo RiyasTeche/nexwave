@@ -11,7 +11,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function ContainerModel(props) {
-  const { nodes, materials } = useGLTF('/containerModel.glb')
+  const { nodes, materials } = useGLTF('./containerModel.glb')
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, -2.278]}>
@@ -21,4 +21,4 @@ export function ContainerModel(props) {
   )
 }
 
-useGLTF.preload('/containerModel.glb')
+useGLTF.preload('./containerModel.glb')

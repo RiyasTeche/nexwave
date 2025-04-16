@@ -9,7 +9,7 @@
     justify-content: space-around;
     flex-direction: column;
     gap: 30px;
-    color:var(--primary);
+    color: var(--primary);
     height: 100%;
 
     h1 {
@@ -20,7 +20,7 @@
       text-transform: uppercase;
     }
     p {
-      line-height:2fr;
+      line-height: 2fr;
       letter-spacing: 1px;
     }
 
@@ -41,7 +41,7 @@
         .imgContainer {
           width: 100px;
           height: 100px;
-          background-color:var(--primary);
+          background-color: var(--primary);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -73,3 +73,80 @@
     }
   }
 }
+
+@media (max-width: 1199px) {
+  .reach {
+    .reachContainer {
+      max-width: 925px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .reach {
+    .reachContainer {
+      max-width: 875px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .reach {
+    .reachContainer {
+      max-width: 550px;
+      h1 {
+        font-size: 35px;
+      }
+
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .reach {
+    .reachContainer {
+      max-width: 400px;
+      h1 {
+        font-size: 30px;
+      }
+
+      .reachItems {
+        gap: 5px;
+        .reachItem {
+          gap: 5px;
+          .imgContainer {
+            width: 40px;
+            height: 40px;
+            img {
+              width: 95%;
+              height: 95%;
+            }
+          }
+
+          .number {
+            width: 100%;
+            gap: 3px;
+            span {
+              font-size: 12px;
+            }
+          }
+          h4 {
+            font-size: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 437px) {
+  .reach {
+    .reachContainer {
+      max-width: 350px;
+    }
+  }
+}
+

@@ -2,9 +2,9 @@
   min-height: calc(100vh - 80px);
   .aboutWrapper {
     background-image: url("/about.jpeg");
-    background-size: 100%;
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
 
     min-height: calc(100vh - 80px);
 
@@ -23,7 +23,7 @@
         justify-content: center;
         gap: 25px;
         padding: 0px 25px 20px 25px;
-       
+
         margin-top: 10px;
         border-radius: 6px;
 
@@ -46,7 +46,7 @@
           cursor: pointer;
           width: max-content;
           padding: 10px 10px;
-          background-color:#591991;
+          background-color: #591991;
           border: none;
           color: var(--letter-color1);
           font-size: 15px;
@@ -70,5 +70,76 @@
   section:nth-of-type(2) {
     background-image: url("/cover5.jpg");
   }
- 
+}
+
+@media (max-width: 1199px) {
+  .about {
+    .aboutWrapper {
+      .aboutConatiner {
+        max-width: 925px;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .about {
+    .aboutWrapper {
+      .aboutConatiner {
+        max-width: 875px;
+
+        .left {
+          h1 {
+            font-size: 35px;
+          }
+
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .about {
+    .aboutWrapper {
+      .aboutConatiner {
+        max-width: 680px;
+        .left {
+          h1 {
+            font-size: 45px;
+          }
+
+          p {
+            font-size: 15px;
+          }
+        }
+        .right {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .about {
+    .aboutWrapper {
+      .aboutConatiner {
+        max-width: 480px;
+        .left {
+          h1 {
+            font-size: 30px;
+          }
+          p {
+            font-size: 12px;
+          }
+
+          button {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }

@@ -59,6 +59,7 @@
       max-width: 750px;
       .left {
         background-color: var(--letter-color2);
+        min-height: 100vh;
         .textContainer {
           h1 {
             font-size: 30px;

@@ -1,8 +1,12 @@
+import { use, useState } from "react";
 import ContainerModelConatiner from "../../components/conatiner/ContainerModelConatiner";
 import OfficeSpaces from "../../components/contact_comp/OfficeSpaces";
 import "./contact.scss";
 
 const Contact = () => {
+  const [success, setSuccess] = useState(false);
+  const [err, setErr] = useState(false);
+
   return (
     <div className="contact">
       <div className="contacttWrapper">
@@ -53,6 +57,8 @@ const Contact = () => {
               ></textarea>
             </div>
             <button>Send</button>
+            {err && <span className="error">Something went wrong!</span>}
+            {success && <span className="success">Message has been send.</span>}
           </form>
         </div>
       </div>

@@ -166,9 +166,8 @@
         }
       }
       @media (max-width: 644px) {
-
         background-image: url("/phonecover.jpg");
-        background-size: cover;       /* ✅ Makes the image fill and crop properly */
+        background-size: cover; /* ✅ Makes the image fill and crop properly */
         .top {
           min-width: 500px;
         }
@@ -191,17 +190,22 @@
       }
 
       @media (max-width: 406px) {
-        .top {
-          min-width: 350px;
-        }
-        .serviceLinks {
-          height: max-content;
-          width: 65vw;
 
-          .serviceItem {
-            border-right: none;
+          .top {
+            min-width: 350px;
+            max-height: 60vh;
+            align-items: flex-start;
+            justify-content: flex-start;
           }
-        }
+          .serviceLinks {
+            height: max-content;
+            width: 65vw;
+
+            .serviceItem {
+              border-right: none;
+            }
+          }
+        
       }
 
       @media (max-width: 360px) {
@@ -220,10 +224,13 @@
               font-weight: 300;
             }
           }
-
         }
       }
     }
+
+
+
+    
     section:nth-of-type(1) {
       display: flex;
       align-items: center;

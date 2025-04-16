@@ -1,8 +1,8 @@
 .serviceList {
   background-image: url("/background.jpg");
-  background-size: 100%;
   background-position: center;
   background-attachment: fixed;
+  background-size: cover;
 
   .serviceListConatiner {
     max-width: 1186px;
@@ -30,8 +30,8 @@
       justify-content: start;
       gap: 50px;
 
-      .scrollIndicator{
-        position:fixed;
+      .scrollIndicator {
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
@@ -51,18 +51,15 @@
           object-fit: cover;
         }
 
-        .imgNumber{
-          color:var(--primary);
+        .imgNumber {
+          color: var(--primary);
           position: absolute;
           top: 50%;
           left: -25px;
           font-size: 45px;
           font-weight: 800;
-          text-shadow:
-          -1px -1px 0 white,
-           1px -1px 0 white,
-          -1px  1px 0 white,
-           1px  1px 0 white;
+          text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+            1px 1px 0 white;
         }
       }
       .textConatiner {
@@ -87,13 +84,11 @@
         p {
           font-size: 15px;
           font-weight: 300;
-          color: gray;
+          color: var(--letter-color2);
         }
 
         .scrollConatiner {
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
+          text-align: end;
           padding-top: 10px;
 
           .scroll {
@@ -103,8 +98,131 @@
       }
     }
 
+    .serviceListItem:last-of-type > .textConatiner {
+      justify-content: center;
+    }
+
     .serviceListItem:nth-child(even) {
       flex-direction: row-reverse;
+    }
+  }
+
+  @media (max-width: 1115px) {
+    .serviceListConatiner {
+      max-width: 853px;
+    }
+  }
+
+  @media (max-width: 924px) {
+    .serviceListConatiner {
+      max-width: 800px;
+      .serviceListItem {
+        gap: 20px;
+        .imgConatiner {
+          .imgNumber {
+            font-size: 30px !important;
+            font-weight: 400;
+          }
+        }
+        .textConatiner {
+          h1 {
+            font-size: 30px !important;
+            font-weight: 400;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 823px) {
+    .serviceListConatiner {
+      max-width: 750px;
+      .serviceListItem {
+        gap: 10px;
+        .imgConatiner {
+          .imgNumber {
+            font-size: 25px !important;
+          }
+        }
+        .textConatiner {
+          h1 {
+            font-size: 25px !important;
+          }
+          p {
+            font-size: 13px;
+            font-weight: 400;
+          }
+          .scrollConatiner {
+            text-align: start;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 781px) {
+    .serviceListConatiner {
+      max-width: 700px;
+      .serviceListItem {
+        flex-direction: column;
+        .imgConatiner {
+          min-height: 350px;
+          min-width: 350px;
+
+          .imgService {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+          }
+        }
+        .textConatiner {
+          z-index: 1;
+        }
+      }
+      .serviceListItem:nth-child(even) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  @media (max-width: 724px) {
+    .serviceListConatiner {
+      max-width: 620px;
+      .serviceListItem {
+        .imgConatiner {
+          min-height: 300px;
+          min-width: 300px;
+
+          .imgService {
+            width: 300px;
+            height: 300px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 625px) {
+    .serviceListConatiner {
+      max-width: 500px;
+    }
+  }
+
+  @media (max-width: 510px) {
+    .serviceListConatiner {
+      max-width: 360px;
+      .serviceListItem {
+        .imgConatiner {
+          display: none;
+        }
+        .textConatiner {
+          align-items: center;
+          justify-content: center;
+        }
+      }
     }
   }
 }

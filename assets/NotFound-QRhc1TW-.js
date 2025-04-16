@@ -1,1 +1,0 @@
-import{j as e}from"./index-BS_LiE-E.js";const t=()=>e.jsxs("div",{style:{textAlign:"center",padding:"4rem"},children:[e.jsx("h1",{children:"404 - Page Not Found"}),e.jsx("p",{children:"Oops! The page you're looking for doesn't exist."})]});export{t as default};

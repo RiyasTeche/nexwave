@@ -8,46 +8,40 @@ const OfficeInfo = ({ index }) => {
   return (
     <>
       {offices.map((item, i) => (
-        <motion.div
-          className="officeInfo"
-          key={i}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-        >
+        <div className="officeInfo">
           <h3>{item.CITY} OFFICE</h3>
           <div className="officeInfoItem">
             <div className="infoleft">
               <ul>
-                <li>
+                <li className="office">
                   <p>{item.NAME}</p>
                   <p>{item.ADDRESS}</p>
                   <p>{item.PO}</p>
                   <p>{item.CITY}</p>
                   <p>{item.COUNTRY}</p>
                 </li>
-                <li>{item.OFFICEPHONE}</li>
-                <li>
+                <li className="phone">{item.OFFICEPHONE}</li>
+                <li className="mail">
                   <p>{item.MAIL}</p>
                 </li>
               </ul>
             </div>
             <div className="infoRight">
               <ul>
-                <li>
+                <li className="phone">
                   {item.FIRSTPERSON}
                   <br />
                   {item.ROLL} <br />
                   <p>{item.PHONE}</p>
                 </li>
-                <li>
+                <li className="phone">
                   <p>{item.SECONDPERSON}</p>
                   <p>{item.SECPHONE}</p>
                 </li>
               </ul>
             </div>
           </div>
-        </motion.div>
+        </div>
       ))}
     </>
   );

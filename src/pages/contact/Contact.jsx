@@ -25,7 +25,7 @@ const Contact = () => {
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Enter your name"
+                placeholder="Mohd. Riyas"
                 autoFocus
                 required
               />
@@ -53,7 +53,7 @@ const Contact = () => {
               <textarea
                 name="message"
                 rows={7}
-                placeholder="message.."
+                placeholder="Write your enquiry.."
               ></textarea>
             </div>
             <button>Send</button>

@@ -20,7 +20,7 @@ const Reach = () => {
   };
 
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.8, once: false }); // 50% visible, only trigger once
+  const isInView = useInView(ref, { amount: 0.6, once: false }); // 50% visible, only trigger once
 
   return (
     <div className="reach">

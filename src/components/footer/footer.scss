@@ -150,6 +150,19 @@
   @media (max-width: 457px) {
     .footerConatiner {
       max-width: 380px;
+
+      .top {
+        .center {
+          text-align: right;
+        }
+      }
+      .bottom {
+        align-items: center;
+        justify-content: center;
+        .footerInfoRigth {
+          display: none;
+        }
+      }
     }
   }
   @media (max-width: 391px) {

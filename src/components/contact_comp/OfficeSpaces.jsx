@@ -51,7 +51,7 @@ const OfficeSpaces = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const variants = {
-    initial: { opacity: 0, scale: 0 },
+    initial: { opacity: .2, scale: .5 },
     animate: {
       opacity: 1,
       scale: 1,

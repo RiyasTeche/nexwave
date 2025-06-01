@@ -6,7 +6,7 @@ import Office from "../../components/about_comp/Office";
 
 const About = () => {
   const textRef = useRef(null);
-  const isInView = useInView(textRef, { amount: 0.8, once: false }); // 50% visible, only trigger once
+  const isInView = useInView(textRef, { amount: 0.7, once: false }); // 70% visible, only trigger once
 
   const variants = {
     initial: { x: -100, opacity: 0 },
@@ -19,6 +19,33 @@ const About = () => {
     },
   };
 
+  const history = [
+    {
+      year: "2020",
+      point: "Nexwave Shipping & Logistics Ltd is founded in Rwanda.",
+    },
+    {
+      year: "2021",
+      point:
+        "Expanded operations to the Democratic Republic of Congo and Uganda, strengthening our presence in East and Central Africa.",
+    },
+    {
+      year: "2022",
+      point:
+        "Entered the Dubai market, creating a vital logistics hub in the Middle East.",
+    },
+    {
+      year: "2023",
+      point:
+        "Opened operations in China, tapping into Asia’s global trade power.",
+    },
+    {
+      year: "2024",
+      point:
+        "Established a base in India, completing our strategic footprint across major trade regions.",
+    },
+  ];
+
   return (
     <div className="about">
       <div className="aboutWrapper">
@@ -30,21 +57,27 @@ const About = () => {
           >
             <h1>Our History</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
-              odit modi hic inventore assumenda esse consectetur facilis, ipsum
-              rerum. Odio dolore voluptate ab dignissimos iste consequuntur ad
-              ullam repellendus neque!
+              From East Africa to the World – The Nexwave Journey <br />
+              Founded in 2020, Nexwave Shipping & Logistics Ltd began its
+              journey in Rwanda with a clear mission: to provide reliable,
+              efficient, and customer-focused logistics solutions in a
+              fast-changing global market.
+              <br /> Starting with a modest operation, we quickly gained the
+              trust of clients through our dedication to service excellence and
+              smart logistics. Our strong foundation in Rwanda laid the
+              groundwork for rapid regional and international expansion.
             </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
-              odit modi hic inventore assumenda esse consectetur facilis, ipsum
-              rerum. Odio dolore voluptate ab dignissimos iste consequuntur ad
-              ullam repellendus neque!
-            </p>
+            <span> Milestones That Shaped Us:</span>
+            <ul>
+              {history.map((value, index) => (
+                <li key={index}>
+                  {value.year} – {value.point}
+                </li>
+              ))}
+            </ul>
             <button>View More !</button>
           </motion.div>
-          <div className="right">
-          </div>
+          <div className="right"></div>
         </div>
       </div>
       <section>

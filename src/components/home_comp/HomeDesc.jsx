@@ -88,7 +88,7 @@ const HomeDesc = () => {
             </div>
           </div>
           <div className="sign">
-            <h4>Muhammed Fasalurahman O</h4>
+            <h4>Fasalurahman </h4>
             <p>Founder & Director</p>
           </div>
         </motion.div>

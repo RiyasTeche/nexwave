@@ -31,8 +31,10 @@ const Services = () => {
       <div className="servicesWrapper">
         <div className="topSectionConatiner">
           <div className="topSection">
-            <img src="./exam.png" alt="" />
-            <h1>Our Solutions</h1>
+            <span>
+              <img src="./exam.png" alt="" />
+              <h1>Our Services</h1>
+            </span>
           </div>
         </div>
         <div className="seviceHeadingConatiner">

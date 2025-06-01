@@ -3,7 +3,6 @@ import "./reach.scss";
 import { motion, useInView } from "framer-motion";
 
 const Reach = () => {
-
   const [counter, setCounter] = useState(
     { packages: 1 },
     { client: 1 },
@@ -20,30 +19,35 @@ const Reach = () => {
   };
 
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.6, once: false }); // 50% visible, only trigger once
+  const isInView = useInView(ref, { amount: 0.5, once: false }); // 50% visible, only trigger once
 
   return (
     <div className="reach">
       <div className="reachContainer">
         <h1>Our Reach</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. A ad maiores
-          accusamus eaque voluptatem! Adipisci corporis nobis ea voluptatem
-          molestiae amet, assumenda doloribus, natus voluptatum illum animi
-          quisquam ipsum? Dicta.
+          Our reach spans across domestic and international markets, enabling us
+          to provide seamless logistics solutions tailored to diverse business
+          needs. Through a network of trusted partners and strategically located
+          hubs, we ensure that shipments move efficiently from origin to
+          destination, regardless of distance or complexity. Our presence in key
+          regions allows us to maintain consistent service standards and meet
+          time-sensitive demands with confidence.
           <br />
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis
-          nesciunt aperiam nihil ipsum quae amet sed consectetur mollitia,
-          dignissimos, repudiandae omnis similique cumque accusantium qui.
-          Aperiam quis dolorem nostrum id. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Inventore minus nostrum, expedita
-          mollitia vitae provident beatae. Eligendi impedit veritatis doloribus,
-          voluptates at fugiat exercitationem repellendus necessitatibus error,
-          commodi maxime molestias.
+          Whether you’re shipping across cities or continents, our logistics
+          capabilities are built to scale with your operations. We bridge the
+          gap between suppliers, distributors, and customers through a reliable
+          and responsive network, giving you the confidence to expand your
+          business wherever opportunity takes you.
         </p>
 
         <div className="reachItems" ref={ref}>
-          <motion.div className="reachItem" variants={variants} animate={isInView ? "animate" : "initial"}  transition={{ duration: .5, ease: "easeInOut" }}>
+          <motion.div
+            className="reachItem"
+            variants={variants}
+            animate={isInView ? "animate" : "initial"}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          >
             <div className="imgContainer">
               <img src="./package.png" alt="" />
             </div>
@@ -64,7 +68,12 @@ const Reach = () => {
             </div>
             <h4>Deliverd Packages</h4>
           </motion.div>
-          <motion.div className="reachItem" variants={variants} animate={isInView ? "animate" : "initial"} transition={{ duration: 1, ease: "easeInOut" }}>
+          <motion.div
+            className="reachItem"
+            variants={variants}
+            animate={isInView ? "animate" : "initial"}
+            transition={{ duration: 1, ease: "easeInOut" }}
+          >
             <div className="imgContainer">
               <img src="./boy.png" alt="" />
             </div>
@@ -84,8 +93,13 @@ const Reach = () => {
               <span></span>
             </div>
             <h4>Satisfied Client</h4>
-            </motion.div>
-          <motion.div className="reachItem" variants={variants} animate={isInView ? "animate" : "initial"} transition={{ duration: 1.5, ease: "easeInOut" }}>
+          </motion.div>
+          <motion.div
+            className="reachItem"
+            variants={variants}
+            animate={isInView ? "animate" : "initial"}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          >
             <div className="imgContainer">
               <img src="./flags.png" alt="" />
             </div>
@@ -105,8 +119,13 @@ const Reach = () => {
               <span>+</span>
             </div>
             <h4>Countries Covered</h4>
-            </motion.div>
-          <motion.div className="reachItem" variants={variants} animate={isInView ? "animate" : "initial"} transition={{ duration: 2, ease: "easeInOut" }}>
+          </motion.div>
+          <motion.div
+            className="reachItem"
+            variants={variants}
+            animate={isInView ? "animate" : "initial"}
+            transition={{ duration: 2, ease: "easeInOut" }}
+          >
             <div className="imgContainer">
               <img src="./goods.png" alt="" />
             </div>

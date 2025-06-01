@@ -5,7 +5,7 @@
     .topSectionConatiner {
       min-height: calc(70vh - 80px);
       scroll-snap-align: center;
-      background-image: url("/cover3.jpg");
+      background-image: url("/cover4.jpg");
       background-size: 100%;
       background-attachment: fixed;
       background-position: center;
@@ -22,19 +22,29 @@
         padding: 20px 20px;
         gap: 10px;
 
-        img {
-          width: 120px;
-          height: 128px;
-        }
+        span {
+          background-color: #17599242;
+          padding: 5px 10px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          border-radius: 6px;
 
-        h1 {
-          font-size: 60px;
-          font-weight: 400;
-          letter-spacing: 2px;
-          text-shadow: -1px -1px 0 gray, 1px -1px 0 gray, -1px 1px 0 gray,
-            1px 1px 0 gray;
-          transform: scale(1, 1.3);
-          white-space: nowrap;
+          img {
+            width: 120px;
+            height: 128px;
+          }
+
+          h1 {
+            font-size: 60px;
+            font-weight: 300;
+            letter-spacing: 2px;
+             text-shadow: -1px -1px 0 gray, 1px -1px 0 gray, -1px 1px 0 gray,
+               1px 1px 0 gray;
+            transform: scale(1, 1.3);
+            color: black;
+            white-space: nowrap;
+          }
         }
       }
     }
@@ -99,7 +109,6 @@
   }
 
   @media (max-width: 897px) {
-
     .bottom {
       li {
         font-size: 8px;
@@ -157,7 +166,6 @@
           letter-spacing: 1px;
         }
       }
-
     }
   }
 }

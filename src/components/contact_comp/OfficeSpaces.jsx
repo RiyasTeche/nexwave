@@ -8,7 +8,7 @@ const OfficeInfo = ({ index }) => {
   return (
     <>
       {offices.map((item, i) => (
-        <div className="officeInfo">
+        <div className="officeInfo" key={i}>
           <h3>{item.CITY} OFFICE</h3>
           <div className="officeInfoItem">
             <div className="infoleft">
@@ -20,24 +20,40 @@ const OfficeInfo = ({ index }) => {
                   <p>{item.CITY}</p>
                   <p>{item.COUNTRY}</p>
                 </li>
-                <li className="phone">{item.OFFICEPHONE}</li>
-                <li className="mail">
-                  <p>{item.MAIL}</p>
-                </li>
+                {item.OFFICEPHONE && (
+                  <li className="phone">{item.OFFICEPHONE}</li>
+                )}
+
+                {item.MAIL && (
+                  <li className="mail">
+                    <p>{item.MAIL}</p>
+                  </li>
+                )}
               </ul>
             </div>
             <div className="infoRight">
               <ul>
-                <li className="phone">
+                <li className="person">
                   {item.FIRSTPERSON}
                   <br />
                   {item.ROLL} <br />
-                  <p>{item.PHONE}</p>
                 </li>
-                <li className="phone">
-                  <p>{item.SECONDPERSON}</p>
-                  <p>{item.SECPHONE}</p>
-                </li>
+                {item.PHONE && (
+                  <li className="phone">
+                    <p>{item.PHONE}</p>
+                  </li>
+                )}
+
+                {item.SECONDPERSON && (
+                  <>
+                    <li className="person">
+                      <p>{item.SECONDPERSON}</p>
+                    </li>
+                    <li className="phone">
+                      <p>{item.SECPHONE}</p>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
           </div>
@@ -51,7 +67,7 @@ const OfficeSpaces = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const variants = {
-    initial: { opacity: .2, scale: .5 },
+    initial: { opacity: 0.2, scale: 0.5 },
     animate: {
       opacity: 1,
       scale: 1,

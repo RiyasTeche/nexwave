@@ -2,7 +2,7 @@ import { motion, useInView, useScroll, useTransform } from "motion/react";
 import "./serviceList.scss";
 import { useRef } from "react";
 
-import {servicesList} from "../../../public/data"
+import { servicesList } from "../../../public/data";
 const serviceListLengath = servicesList.length;
 
 const ServicePageItem = (props) => {
@@ -24,7 +24,7 @@ const ServicePageItem = (props) => {
 
   // Parallax transform: the image moves slower than scroll
   const y = useTransform(scrollYProgress, [0, 1], ["-300%", "300%"]);
-  const isInView = useInView(ref, { amount: 0.4, once: false }); // 50% visible, only trigger once
+  const isInView = useInView(ref, { amount: 0.5, once: false }); 
 
   return (
     <div className="serviceListItem">
@@ -47,7 +47,12 @@ const ServicePageItem = (props) => {
         </motion.h2>
       </motion.div>
       <div className="textConatiner">
-        <h1>{props.service.title}</h1>
+        <motion.h1
+          variants={variants}
+          animate={isInView ? "animate" : "initial"}
+        >
+          {props.service.title}
+        </motion.h1>
         <p>{props.service.desc}</p>
         {serviceListLengath != props.index + 1 && (
           <div className="scrollConatiner">
@@ -56,7 +61,7 @@ const ServicePageItem = (props) => {
               src="./scroll.png"
               alt=""
               initial={{ y: "-10px", opacity: 0 }}
-              animate={{ y: "0px", opacity: .5 }}
+              animate={{ y: "0px", opacity: 0.5 }}
               transition={{
                 duration: 2,
                 repeat: Infinity,
@@ -74,7 +79,6 @@ const ServiceList = () => {
   return (
     <div className="serviceList">
       <div className="serviceListConatiner">
-        {/* <h1>Global Freight Solutions (Sea, Air, and Land)</h1> */}
         {servicesList.map((service, index) => (
           <ServicePageItem key={index} service={service} index={index} />
         ))}

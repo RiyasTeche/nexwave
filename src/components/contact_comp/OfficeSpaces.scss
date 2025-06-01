@@ -92,8 +92,8 @@
               margin-left: 10px;
               list-style: none; /* Remove default bullets */
               li {
-                padding: 0 10px;
-                position: relative;  
+                padding: 0 0 0 10px;
+                position: relative;
                 p {
                   font-size: 15px;
                   font-weight: 300;
@@ -101,52 +101,49 @@
               }
             }
 
-            .office::before {
-              content: '';
+            .office::before,
+            .phone::before,
+            .mail::before,
+            .person::before {
+              content: "";
               position: absolute;
               left: 0;
               top: 5px; /* adjust vertically as needed */
               transform: translateX(-20px);
               width: 20px;
               height: 20px;
-              background-image: url('/office.png');
               background-size: contain;
               background-repeat: no-repeat;
             }
 
+            .office::before {
+              background-image: url("/office.png");
+            }
             .phone::before {
-              content: '';
-              position: absolute;
-              left: 0;
-              top: 5px; /* adjust vertically as needed */
-              transform: translateX(-20px);
-              width: 20px;
-              height: 20px;
-              background-image: url('/call.png');
-              background-size: contain;
-              background-repeat: no-repeat;
+              background-image: url("/call.png");
             }
 
             .mail::before {
-              content: '';
-              position: absolute;
-              left: 0;
-              top: 5px; /* adjust vertically as needed */
-              transform: translateX(-20px);
-              width: 20px;
-              height: 20px;
-              background-image: url('/email.png');
-              background-size: contain;
-              background-repeat: no-repeat;
+              background-image: url("/email.png");
+            }
+
+            .person::before {
+              background-image: url("/person.png");
             }
 
             .infoleft {
               flex: 1;
-              padding: 10px 10px;
+              padding: 10px 0px 10px 10px;
+              display: flex;
+              flex-direction: column;
+              gap: 25px;
             }
             .infoRight {
               flex: 1;
-              padding: 10px 10px;
+              padding: 10px 0px 10px 10px;
+              display: flex;
+              flex-direction: column;
+              gap: 25px;
             }
           }
         }
@@ -165,6 +162,14 @@
           h3 {
             font-size: 18px !important;
             font-weight: 300;
+          }
+        }
+      }
+
+      .right {
+        .phone {
+          p {
+            font-size: 13px !important;
           }
         }
       }

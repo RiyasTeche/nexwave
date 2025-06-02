@@ -75,12 +75,12 @@ const About = () => {
                 </li>
               ))}
             </ul>
-            <button>View More !</button>
+            <a href="#reach"><button>View More !</button></a>
           </motion.div>
           <div className="right"></div>
         </div>
       </div>
-      <section>
+      <section id="reach">
         <Reach />
       </section>
       <section>

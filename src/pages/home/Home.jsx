@@ -65,15 +65,20 @@ const Home = () => {
   const video2Ref = useRef(null);
   const [playingVideo, setPlayingVideo] = useState(1);
   const [speedUp, setSpeedUp] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+
     const currentVideo =
       playingVideo === 1 ? video1Ref.current : video2Ref.current;
     if (currentVideo) {
       currentVideo.playbackRate = speedUp ? 2.0 : 1.5;
       currentVideo.play();
-    } 
-  }, [playingVideo, speedUp]);
+    }
+    return () => window.removeEventListener("resize", handleResize);
+  }, [playingVideo, speedUp, screenWidth]);
 
   const handleVideo1End = () => {
     setSpeedUp((prev) => !prev); // toggle speed
@@ -89,30 +94,35 @@ const Home = () => {
     <div className="home">
       <div className="homeWrapper">
         <div className="heroConatiner">
-          {/* Video 1 */}
-          <video
-            autoPlay
-            muted
-            className="headerVideo"
-            ref={video1Ref}
-            style={{ display: playingVideo === 1 ? "block" : "none" }}
-            onEnded={handleVideo1End}
-          >
-            <source src={vedio1} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          {/* Video 2 */}
-          <video
-            autoPlay
-            muted
-            className="headerVideo"
-            ref={video2Ref}
-            style={{ display: playingVideo === 2 ? "block" : "none" }}
-            onEnded={handleVideo2End}
-          >
-            <source src={vedio2} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          {screenWidth > 644 && (
+            <>
+              {/* Video 1 */}
+              <video
+                autoPlay
+                muted
+                className="headerVideo"
+                ref={video1Ref}
+                style={{ display: playingVideo === 1 ? "block" : "none" }}
+                onEnded={handleVideo1End}
+              >
+                <source src={vedio1} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              {/* Video 2 */}
+              <video
+                autoPlay
+                muted
+                className="headerVideo"
+                ref={video2Ref}
+                style={{ display: playingVideo === 2 ? "block" : "none" }}
+                onEnded={handleVideo2End}
+              >
+                <source src={vedio2} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>{" "}
+            </>
+          )}
+
           <div className="top">
             <motion.div
               ref={ref}
